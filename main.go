@@ -1,0 +1,7 @@
+package main
+
+import "go-fundamentals/arrays"
+
+func main() {
+	arrays.Demo()
+}
