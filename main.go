@@ -1,7 +1,10 @@
 package main
 
-import "go-fundamentals/go-fundamentals/arrays"
+
+import "go-fundamentals/arrays"
+
 
 func main() {
 	arrays.Array()
+	arrays.StudentManagement()
 }
