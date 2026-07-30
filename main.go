@@ -1,7 +1,7 @@
 package main
 
-import "go-fundamentals/arrays"
+import "go-fundamentals/go-fundamentals/arrays"
 
 func main() {
-	arrays.Demo()
+	arrays.Array()
 }
