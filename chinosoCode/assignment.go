@@ -13,6 +13,55 @@ func AddStudent(newStudents []string) ([]string, []string, []string) {
 	return previousStudents, students, newStudents
 }
 
+func ReadStudent() {
+	if len(students) == 0 {
+		fmt.Println("No Student Found.")
+		return
+	}
+
+	fmt.Println("\n --- Student List ------")
+
+	for i, student := range students {
+		fmt.Printf("%d. %s\n", i+1, student)
+
+	}
+}
+
+func UpdatedStudent() {
+
+	var index int
+	var newName string
+
+	fmt.Print("Enter student number to update: ")
+	fmt.Scan(&index)
+
+	if index < 1 || index > len(students) {
+		fmt.Println("Invalid student number.")
+		return
+	}
+
+	fmt.Print("Enter new student name: ")
+	fmt.Scan(&newName)
+
+	students[index-1] = newName
+
+	fmt.Println("Student updated successfully!")
+}
+
+func DeletedStudent() {
+	var index int
+
+	fmt.Print("Enter student number to delete: ")
+	fmt.Scan(&index)
+
+	if index < 1 || index > len(students) {
+		fmt.Println("Invalid student number.")
+		return
+	}
+
+	students = append(students[:index-1], students[index:]...)
+}
+
 func StudentManagement() {
 	var number int
 
