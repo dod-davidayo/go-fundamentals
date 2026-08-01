@@ -1,17 +1,15 @@
 package main
 
-import (
-	"go-fundamentals/chinosoCode"
+import "go-fundamentals/chinosoCode"
 
-	"go-fundamentals/arrays"
-)
+//"go-fundamentals/arrays"
 
 func main() {
-	arrays.Array()
-	arrays.StudentManagement()
-	arrays.CrudBook()
+	// arrays.Array()
+	// arrays.StudentManagement()
+	// arrays.CrudBook()
 	chinosoCode.StudentManagement()
 	chinosoCode.ReadStudent()
-	chinosoCode.UpdateStudent()
-	chinosoCode.DeleteStudent()
+	chinosoCode.UpdatedStudent()
+	chinosoCode.DeletedStudent()
 }

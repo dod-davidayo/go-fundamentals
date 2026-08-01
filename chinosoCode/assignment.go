@@ -1,4 +1,4 @@
-package chinosocode
+package chinosoCode
 
 import "fmt"
 
