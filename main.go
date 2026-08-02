@@ -1,6 +1,12 @@
 package main
 
-import "go-fundamentals/chinosoCode"
+import (
+	//"go-fundamentals/arrays"
+
+	"go-fundamentals/chinosoCode"
+
+	"go-fundamentals/slices"
+)
 
 //"go-fundamentals/arrays"
 
@@ -12,4 +18,5 @@ func main() {
 	chinosoCode.ReadStudent()
 	chinosoCode.UpdatedStudent()
 	chinosoCode.DeletedStudent()
+	slices.Slices()
 }
