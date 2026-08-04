@@ -2,9 +2,17 @@ package chinosoCode
 
 import "fmt"
 
-var students = []string{}
+type StudentRecord struct {
+	ID     int
+    Name   string
+	Age    int
+	Lga    string
+}
 
-func AddStudent(newStudents []string) ([]string, []string, []string) {
+
+var students = []StudentRecord{}
+
+func AddStudent(newStudents []StudentRecord) ([]string, []string, []string) {
 
 	previousStudents := append([]string{}, students...)
 
@@ -59,7 +67,9 @@ func DeletedStudent() {
 		return
 	}
 
-	students = append(students[:index-1], students[index:]...)
+	//students = append(students, newStudents...)
+
+	students = append(students[:index-1], students[index:]...) // understand this
 }
 
 func StudentManagement() {
