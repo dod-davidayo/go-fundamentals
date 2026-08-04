@@ -3,18 +3,17 @@ package chinosoCode
 import "fmt"
 
 type StudentRecord struct {
-	ID     int
-    Name   string
-	Age    int
-	Lga    string
+	ID   int
+	Name string
+	Age  int
+	Lga  string
 }
-
 
 var students = []StudentRecord{}
 
-func AddStudent(newStudents []StudentRecord) ([]string, []string, []string) {
+func AddStudent(newStudents []StudentRecord) ([]StudentRecord, []StudentRecord, []StudentRecord) {
 
-	previousStudents := append([]string{}, students...)
+	previousStudents := append([]StudentRecord{}, students...)
 
 	students = append(students, newStudents...)
 
@@ -30,7 +29,13 @@ func ReadStudent() {
 	fmt.Println("\n --- Student List ------")
 
 	for i, student := range students {
-		fmt.Printf("%d. %s\n", i+1, student)
+		fmt.Printf("%d. ID:%d Name:%s Age:%d LGA:%s\n",
+			i+1,
+			student.ID,
+			student.Name,
+			student.Age,
+			student.Lga,
+		)
 
 	}
 }
@@ -51,7 +56,7 @@ func UpdatedStudent() {
 	fmt.Print("Enter new student name: ")
 	fmt.Scan(&newName)
 
-	students[index-1] = newName
+	students[index-1].Name = newName
 
 	fmt.Println("Student updated successfully!")
 }
@@ -69,7 +74,8 @@ func DeletedStudent() {
 
 	//students = append(students, newStudents...)
 
-	students = append(students[:index-1], students[index:]...) // understand this
+	students = append(students[:index-1], students[index:]...)
+	fmt.Println("Student deleted successfully!")
 }
 
 func StudentManagement() {
@@ -78,15 +84,24 @@ func StudentManagement() {
 	fmt.Print("How many students do you want to add? ")
 	fmt.Scan(&number)
 
-	newStudents := []string{}
+	newStudents := []StudentRecord{}
 
 	for i := 0; i < number; i++ {
-		var name string
+		var student StudentRecord
 
-		fmt.Printf("Enter student %d name: ", i+1)
-		fmt.Scan(&name)
+		fmt.Print("Enter ID: ")
+		fmt.Scan(&student.ID)
 
-		newStudents = append(newStudents, name)
+		fmt.Print("Enter Name: ")
+		fmt.Scan(&student.Name)
+
+		fmt.Print("Enter Age: ")
+		fmt.Scan(&student.Age)
+
+		fmt.Print("Enter LGA: ")
+		fmt.Scan(&student.Lga)
+
+		newStudents = append(newStudents, student)
 	}
 
 	oldStudents, updatedStudents, addedStudents := AddStudent(newStudents)

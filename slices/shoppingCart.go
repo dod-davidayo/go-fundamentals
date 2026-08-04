@@ -25,7 +25,7 @@ func ShoppingCart() {
 	var carts []Product
 
 	var choice string
-	var index int
+	//var index int
 	//var cart string
 
 	for {
