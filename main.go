@@ -1,11 +1,13 @@
 package main
 
 import (
-	//"go-fundamentals/arrays"
+	"go-fundamentals/arrays"
 
 	"go-fundamentals/chinosoCode"
 
-	//"go-fundamentals/slices"
+	"go-fundamentals/slices"
+
+	"go-fundamentals/maps"
 )
 
 //"go-fundamentals/arrays"
@@ -18,6 +20,7 @@ func main() {
 	chinosoCode.ReadStudent()
 	chinosoCode.UpdatedStudent()
 	chinosoCode.DeletedStudent()
-	//slices.Slices()
-	//slices.ShoppingCart()
+	slices.Slices()
+	slices.ShoppingCart()
+	maps.MapAssignment()
 }
